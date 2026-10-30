@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>GoIELTS | Smart Onboarding Mind Map</title>
+<style>
+:root{
+  --navy:#0a2b65;--ink:#1c3050;--muted:#66778d;--blue:#2d5aab;--teal:#0b8b86;--teal-bg:#eef9f8;
+  --red:#c12b4c;--red-bg:#fff1f3;--border:#dde6f1;--bg:#f4f7fb;--card:#ffffff;--soft:#f7f9fc;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:var(--blue)}
+.container{max-width:1320px;margin:auto;padding:28px 22px 64px}
+.hero{background:linear-gradient(120deg,#071b45,#173c7b);border-radius:24px;color:#fff;padding:36px 40px;position:relative;overflow:hidden;box-shadow:0 14px 40px rgba(18,49,90,.09)}
+.hero:after{content:'';position:absolute;width:320px;height:320px;border:70px solid rgba(255,255,255,.06);border-radius:50%;left:-120px;bottom:-170px}
+.eyebrow{font-size:12px;letter-spacing:1.3px;font-weight:800;opacity:.85}
+h1{margin:12px 0 10px;font-size:clamp(24px,3vw,38px);line-height:1.35}
+.hero p{margin:0;max-width:820px;color:#dce7fb;font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pill{display:inline-flex;border:1px solid rgba(255,255,255,.26);padding:5px 13px;border-radius:999px;font-size:12px;background:rgba(255,255,255,.07);color:#eef4ff}
+.top-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:11px;text-decoration:none;font-weight:700;font-size:13px}
+.btn.primary{background:#fff;color:#13336d}
+.btn.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff}
+.section{margin-top:28px}
+.section h2{margin:0 0 6px;font-size:23px;color:#0f2857}
+.sub{margin:0 0 15px;color:var(--muted);font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px 18px 15px;box-shadow:0 5px 15px rgba(17,30,55,.04)}
+.metric .k{font-size:12px;color:var(--muted)}
+.metric strong{display:block;margin-top:10px;font-size:31px;line-height:1;color:var(--navy);direction:ltr;text-align:right}
+.metric .foot{font-size:12px;color:#72829a;margin-top:8px}
+.metric.alert strong{color:var(--red)}
+.metric.good strong{color:var(--teal)}
+.surface{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 6px 18px rgba(16,29,49,.05);padding:20px}
+.notice{background:#fff8df;border:1px solid #f0df8b;border-radius:13px;padding:13px 15px;color:#6c5d20;font-size:13px}
+.notice b{color:#5c4e18}
+.diagram-scroll{overflow-x:auto;padding-bottom:10px}
+.flow-canvas{min-width:1020px;width:100%;height:auto;display:block}
+.edge{fill:none;stroke:#81a4ed;stroke-width:3.6;opacity:.78;stroke-linecap:round}
+.edge.danger{stroke:#e5a3af}
+.edge.custom{stroke:#0b9b94}
+.node{cursor:pointer;transition:opacity .15s}
+.node .rect{fill:#fff;stroke:#bfcbe0;stroke-width:1.6;rx:17;filter:url(#softshadow)}
+.node:hover .rect,.node:focus-visible .rect{stroke:#2e5bb3;stroke-width:2.6}
+.node.active .rect{stroke:#123d8b;stroke-width:3}
+.node.primary .rect{fill:#0a2b65;stroke:#0a2b65}.node.positive .rect{fill:#ecf9f7;stroke:#85c8c3}.node.negative .rect{fill:#fff0f1;stroke:#e9bac4}
+.node-title{fill:#1d3151;font-weight:700;font-size:16px;pointer-events:none;text-anchor:middle}.node-value{fill:#173c7a;font-weight:800;font-size:27px;pointer-events:none;text-anchor:middle}
+.node.primary .node-title,.node.primary .node-value{fill:#fff}.node.negative .node-value{fill:#ad2445}.node.positive .node-value{fill:#087a74}
+.legend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px;color:#65768b;margin:8px 0 0}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-left:6px;background:#2355af}.dot.red{background:#bd3e58}.dot.teal{background:#0d968c}
+.selection-details{background:#f5f8fd;border:1px solid #dce6f3;border-radius:12px;padding:12px 17px;margin-top:12px;font-size:13px;color:#254267;min-height:50px}.selection-details b{color:var(--navy)}
+
+/* mind map */
+.tree-wrap{overflow:auto;padding:6px 2px 0}
+.tree-h{min-width:1220px;direction:ltr}
+.tree-item{display:flex;flex-direction:row-reverse;align-items:center;gap:22px;position:relative}
+.tree-item + .tree-item{margin-top:18px}
+.node-wrap{display:flex;flex-direction:row-reverse;align-items:center;gap:10px;position:relative;z-index:2}
+.children{display:flex;flex-direction:column;gap:18px;position:relative;padding-right:34px}
+.children:before{content:'';position:absolute;right:14px;top:14px;bottom:14px;width:2px;background:#d8e1ee;border-radius:2px}
+.children>.tree-item:before{content:'';position:absolute;right:-20px;top:50%;width:20px;height:2px;background:#d8e1ee;transform:translateY(-50%)}
+.toggle{width:28px;height:28px;border-radius:50%;border:1px solid #cbd6e6;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:#244d9a;cursor:pointer;flex:0 0 auto;box-shadow:0 2px 6px rgba(16,29,49,.06)}
+.toggle.empty{visibility:hidden;pointer-events:none}
+.mm-node{min-width:230px;max-width:390px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 16px;box-shadow:0 5px 13px rgba(17,30,55,.04);text-align:right;direction:rtl}
+.mm-node .title{font-weight:800;color:#102959;font-size:15px;line-height:1.5}
+.mm-node .value{font-size:28px;font-weight:900;color:var(--navy);line-height:1.1;margin-top:6px;direction:ltr;text-align:right}
+.mm-node .meta{margin-top:7px;font-size:12px;color:#6d7d94;display:block}
+.mm-node.root{background:#0a2b65;border-color:#0a2b65}.mm-node.root .title,.mm-node.root .value,.mm-node.root .meta{color:#fff}
+.mm-node.positive{background:var(--teal-bg);border-color:#8bcac4}.mm-node.positive .value{color:var(--teal)}
+.mm-node.negative{background:var(--red-bg);border-color:#e8b8c4}.mm-node.negative .value{color:var(--red)}
+.mm-node.neutral{background:#f8fafc}
+.mm-node.warning{background:#fff8df;border-color:#efd986}
+.mm-node.small .value{font-size:22px}
+.mm-node .subline{margin-top:6px;font-size:12px;color:#49617f}
+.children.collapsed{display:none}
+.tip-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.mini-card{background:#fafbfd;border:1px solid var(--border);border-radius:13px;padding:15px;margin-bottom:11px}.mini-card b{font-size:20px;color:var(--navy);display:block;direction:ltr;text-align:right}.mini-card p{font-size:12px;margin:3px 0 0;color:#66778d}
+.group{padding:11px 0}.group+.group{border-top:1px solid #edf0f5}.group-title{font-size:14px;font-weight:700;color:#122952}.group-meta{font-size:12px;color:#697b93;margin-top:2px}.group-details{font-size:12px;color:#62728a;margin-top:5px}.info-row{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;margin:17px 0 4px}.info-row span{font-size:13px;color:#38506c}.info-row b{font-size:13px;color:#173b71}.track{height:9px;background:#edf1f7;border-radius:12px;overflow:hidden}.fill{height:100%;background:#2d5aab;border-radius:12px}.fill.mint{background:#0a9287}.fill.red{background:#bf294c}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.action{background:white;border:1px solid var(--border);border-radius:16px;padding:20px}.priority{font-size:10px;letter-spacing:.5px;color:#a91a3d;background:#fff0f3;border-radius:5px;padding:3px 7px;font-weight:800;display:inline-block}.action h3{font-size:16px;color:#132f5d;margin:11px 0 7px}.action p{font-size:13px;color:#697b90;line-height:1.75;margin:0}.action small{display:block;margin-top:10px;color:#0c827a;font-weight:700;font-size:11px}
+.method{background:#f0f4fa;border-right:4px solid #bac9e2;border-radius:9px;padding:13px 16px;font-size:12px;color:#536882;margin-top:20px}
+.footer{color:#78869a;font-size:12px;margin-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:920px){.container{padding:15px 12px 45px}.hero{padding:26px 22px}.metrics{grid-template-columns:repeat(2,1fr)}.tip-grid,.actions{grid-template-columns:1fr}.surface{padding:14px}.tree{min-width:720px}}
+@media(max-width:620px){.metrics{grid-template-columns:1fr}.hero h1{font-size:25px}}
+
+/* Reliable horizontal SVG mind map. The viewport contains the drawing, so it cannot push the page thousands of pixels wide. */
+.mind-panel{padding:0;overflow:hidden}
+.mind-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:15px 18px;background:#f8fafd;border-bottom:1px solid #e4eaf4}
+.mind-toolbar-label{font-weight:800;font-size:13px;color:#233e65;display:flex;align-items:center;gap:9px}
+.mind-live{display:inline-block;width:9px;height:9px;border-radius:50%;background:#0c9689}
+.mind-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.mind-actions button{background:white;border:1px solid #d0dbea;border-radius:9px;padding:6px 12px;min-height:34px;font-size:12px;color:#284876;cursor:pointer;font-family:inherit}
+.mind-actions button:hover,.mind-actions button:focus-visible{background:#eaf1ff;border-color:#729ad9}
+#mind-zoom-label{font-weight:700;font-size:12px;min-width:43px;text-align:center;color:#45617e}
+.mind-viewport{width:100%;height:720px;max-height:82vh;min-height:360px;overflow:auto;direction:rtl;background-color:#fff;background-image:radial-gradient(#e3eaf3 0.85px,transparent 0.85px);background-size:22px 22px;cursor:grab;touch-action:pan-x pan-y;position:relative}
+.mind-viewport.grabbing{cursor:grabbing}
+.mind-svg{display:block;max-width:none;user-select:none;-webkit-user-select:none}
+.mind-edge{fill:none;stroke:#9ab2db;stroke-width:2.5;stroke-linecap:round;opacity:.8}
+.mind-edge.custom{stroke:#49a9a0}
+.mind-edge.negative{stroke:#e6a0af}
+.mind-rect{fill:#fff;stroke:#c9d5e7;stroke-width:1.3;filter:drop-shadow(0 3px 5px rgba(18,46,83,.055))}
+.mind-node[data-kind="root"] .mind-rect{fill:#0a2b65;stroke:#0a2b65}
+.mind-node[data-kind="positive"] .mind-rect{fill:#e9f8f5;stroke:#83c8c1}
+.mind-node[data-kind="negative"] .mind-rect{fill:#fff0f1;stroke:#e8b4c1}
+.mind-node[data-kind="warning"] .mind-rect{fill:#fffaec;stroke:#efce72}
+.mind-node[data-children="true"]{cursor:pointer}
+.mind-node[data-children="true"]:hover .mind-rect{stroke:#2454a4;stroke-width:2.3}
+.mind-node:focus-visible .mind-rect{stroke:#2454a4;stroke-width:2.5}
+.mind-title{font-family:Tahoma,Arial,sans-serif;font-size:14px;font-weight:750;fill:#173561;pointer-events:none}
+.mind-value{font-family:Tahoma,Arial,sans-serif;font-size:26px;font-weight:850;fill:#173c7a;pointer-events:none}
+.mind-meta{font-family:Tahoma,Arial,sans-serif;font-size:11px;fill:#5e748e;pointer-events:none}
+.mind-node[data-kind="root"] .mind-title,.mind-node[data-kind="root"] .mind-value,.mind-node[data-kind="root"] .mind-meta{fill:white}
+.mind-node[data-kind="positive"] .mind-value{fill:#097a73}
+.mind-node[data-kind="negative"] .mind-value{fill:#b01f42}
+.mind-toggle-disc{fill:white;stroke:#a5b9d6;stroke-width:1.4}
+.mind-toggle-text{font-family:Arial,sans-serif;font-size:19px;font-weight:bold;fill:#2453a0;pointer-events:none}
+.mind-footnote{font-size:12px;line-height:1.9;color:#596d85;padding:12px 18px 15px;margin:0;border-top:1px solid #e3eaf3;background:#fbfcfe}
+@media(max-width:650px){.mind-toolbar{padding:12px}.mind-actions{gap:5px}.mind-actions button{padding:5px 8px}.mind-viewport{height:500px;max-height:65vh}}
+</style>
+</head>
+<body>
+<main class="container">
+<section class="hero">
+<div class="eyebrow">GOIELTS.AI / SMART ONBOARDING / SAUDI ARABIA</div>
+<h1>خريطة Smart Onboarding: من الظهور حتى النتيجة والتفاعل معها</h1>
+<p>نسخة محدثة من التقرير مع خريطة ذهنية قابلة للفتح والإغلاق، وشجرة مرئية سريعة، وربط نتائج الاختبار الفعلية بقاعدة البيانات. أضفت امتداد المسارات حتى <b>Active Result</b> و <b>Engaged with Result Page</b> حيثما كانت البيانات متاحة.</p>
+<div class="meta">
+<span class="pill">آخر 30 يومًا حتى 29 أكتوبر 2026</span>
+<span class="pill">السعودية فقط</span>
+<span class="pill">بدون الحسابات الداخلية المعروفة</span>
+<span class="pill">مصدران: PostHog + Production DB</span>
+</div>
+<div class="top-actions">
+<a class="btn primary" href="https://eu.posthog.com/project/111712/dashboard/1067119" rel="noopener" target="_blank">افتح الداشبورد المباشر ↗</a>
+<a class="btn secondary" href="#mindmap">اذهب إلى الـ Mind Map</a>
+</div>
+</section>
+<section class="section">
+<div class="metrics">
+<div class="metric"><div class="k">جلسات ظهر فيها الـ Onboarding</div><strong>520</strong><div class="foot">وحدة القياس هنا هي الجلسة</div></div>
+<div class="metric"><div class="k">اختيارات مسجلة خلال 30 دقيقة</div><strong>329</strong><div class="foot">63.3% من جلسات الظهور</div></div>
+<div class="metric alert"><div class="k">جلسات بدون اختيار مسجل</div><strong>191</strong><div class="foot">ليست كلها تسربًا فعليًا</div></div>
+<div class="metric good"><div class="k">بدأوا اختبارًا بعد الاختيار</div><strong>313</strong><div class="foot">95.1% من الجلسات التي سجلت اختيارًا</div></div>
+</div>
+</section>
+
+<section class="section" id="mindmap">
+<h2>خريطة المسارات التفاعلية</h2>
+<p class="sub">الفروع تتقدم أفقيًا من اليمين إلى اليسار. اضغط على علامة + أمام أي مرحلة لفتح تفاصيلها، وعلى − لإغلاقها. يمكن سحب مساحة الرسم وتكبيرها.</p>
+<div class="mind-panel surface">
+<div class="mind-toolbar">
+<div class="mind-toolbar-label"><span class="mind-live"></span> خريطة جلسات السعودية ونتائج المحاولات</div>
+<div class="mind-actions">
+<button id="mind-expand" type="button">فتح جميع الفروع</button>
+<button id="mind-collapse" type="button">إغلاق الفروع</button>
+<button aria-label="تصغير" id="mind-zoom-out" type="button">−</button>
+<span aria-live="polite" id="mind-zoom-label">100%</span>
+<button aria-label="تكبير" id="mind-zoom-in" type="button">+</button>
+<button id="mind-reset" type="button">إعادة الضبط</button>
+</div>
+</div>
+<div aria-label="خريطة شجرة Smart Onboarding" class="mind-viewport" id="mind-viewport" role="region" tabindex="0">
+<svg aria-label="مخطط تفريعي يبدأ من ظهور التهيئة وصولاً إلى التفاعل مع صفحة النتيجة" class="mind-svg" id="mind-svg" role="img" xmlns="http://www.w3.org/2000/svg"></svg>
+<noscript><p>هذا الرسم يحتاج تفعيل JavaScript للتفاعل. يمكن الاطلاع على جداول النتائج في الأقسام التالية.</p></noscript>
+</div>
+<p class="mind-footnote">ملاحظة: الأعداد عند بداية المسار على مستوى <b>الجلسات</b>، بينما نتائج الاختبار على مستوى <b>محاولات فردية</b>. النتائج (الإكمال، عرض الصفحة، التفاعل) مؤشرات متقاطعة وليست مراحل يجب جمعها. لا يوجد هنا ربط واحد-لواحد بين إجمالي الجلسات والمحاولات.</p>
+</div>
+</section>
+
+<section class="section">
+<h2>شجرة سريعة بشكل بصري</h2>
+<p class="sub">نفس الشجرة المختصرة السابقة، للاطلاع السريع. اضغط على أي عقدة لترى وصفها.</p>
+<div class="surface">
+<div class="diagram-scroll">
+<svg aria-labelledby="chartTitle chartDesc" class="flow-canvas" role="img" viewbox="0 0 1340 700" xmlns="http://www.w3.org/2000/svg">
+<title id="chartTitle">شجرة Smart Onboarding للسعودية</title>
+<desc id="chartDesc">520 جلسة ظهور، 329 اختيارًا مسجلًا، 191 بدون اختيار؛ 235 محادثة و45 اختبارًا كاملًا و49 تخصيصًا؛ منها 27 مهارات أولًا و21 وقتًا أولًا وواحدة غير معروفة.</desc>
+<defs><filter height="170%" id="softshadow" width="150%" x="-20%" y="-35%"><fedropshadow dx="0" dy="3" flood-opacity=".075" stddeviation="5"></fedropshadow></filter></defs>
+<path class="edge" d="M1082 320 C1035 320 1065 196 1016 196"></path>
+<path class="edge danger" d="M1082 320 C1037 320 1058 469 1016 469"></path>
+<path class="edge" d="M770 196 C724 196 748 102 705 102"></path>
+<path class="edge" d="M770 196 C729 196 749 247 705 247"></path>
+<path class="edge custom" d="M770 196 C722 196 747 392 705 392"></path>
+<path class="edge custom" d="M448 392 C398 392 423 354 367 354"></path>
+<path class="edge custom" d="M448 392 C397 392 425 487 367 487"></path>
+<path class="edge custom" d="M448 392 C392 392 427 613 367 613"></path>
+<g aria-label="ظهر الـ Onboarding في 520 جلسة" class="node primary active" data-key="root" role="button" tabindex="0"><rect class="rect" height="103" rx="17" width="224" x="1082" y="270"></rect><text class="node-title" x="1194" y="304">ظهور الـ Onboarding</text><text class="node-value" x="1194" y="345">520</text></g>
+<g aria-label="329 جلسة سجلت اختيارًا" class="node positive" data-key="selected" role="button" tabindex="0"><rect class="rect" height="108" rx="17" width="246" x="770" y="143"></rect><text class="node-title" x="893" y="176">اختيار مسجّل</text><text class="node-value" x="893" y="219">329</text></g>
+<g aria-label="191 جلسة بلا اختيار مسجل" class="node negative" data-key="missing" role="button" tabindex="0"><rect class="rect" height="107" rx="17" width="246" x="770" y="416"></rect><text class="node-title" x="893" y="451">لا يوجد اختيار مسجل</text><text class="node-value" x="893" y="495">191</text></g>
+<g class="node" data-key="speaking" role="button" tabindex="0"><rect class="rect" height="104" rx="17" width="257" x="448" y="51"></rect><text class="node-title" x="576" y="86">محادثة مباشرة</text><text class="node-value" x="576" y="127">235</text></g>
+<g class="node" data-key="full" role="button" tabindex="0"><rect class="rect" height="104" rx="17" width="257" x="448" y="196"></rect><text class="node-title" x="576" y="231">اختبار كامل</text><text class="node-value" x="576" y="272">45</text></g>
+<g class="node positive" data-key="custom" role="button" tabindex="0"><rect class="rect" height="104" rx="17" width="257" x="448" y="341"></rect><text class="node-title" x="576" y="376">تخصيص الاختبار</text><text class="node-value" x="576" y="417">49</text></g>
+<g class="node" data-key="skills" role="button" tabindex="0"><rect class="rect" height="100" rx="17" width="279" x="88" y="303"></rect><text class="node-title" x="227" y="339">المهارات أولًا</text><text class="node-value" x="227" y="377">27</text></g>
+<g class="node" data-key="time" role="button" tabindex="0"><rect class="rect" height="100" rx="17" width="279" x="88" y="436"></rect><text class="node-title" x="227" y="472">الوقت أولًا</text><text class="node-value" x="227" y="510">21</text></g>
+<g class="node" data-key="unknown" role="button" tabindex="0"><rect class="rect" height="93" rx="17" width="279" x="88" y="566"></rect><text class="node-title" x="227" y="601">فرع غير محدد</text><text class="node-value" x="227" y="638">1</text></g>
+</svg>
+</div>
+<div class="legend"><span><i class="dot"></i>مسارات التصفح والاختيار</span><span><i class="dot red"></i>اختيار غير مسجل</span><span><i class="dot teal"></i>التخصيص</span></div>
+<div aria-live="polite" class="selection-details" id="selection-details"><b>بداية الرحلة:</b> في 520 جلسة سعودية ظهرت نافذة Smart Onboarding خلال فترة القياس.</div>
+<p class="sub" style="margin-top:10px;margin-bottom:0">الأرقام في هذه الشجرة تخص الجلسات لا المحاولات. لهذا السبب أضفت الـ Mind Map بالأعلى لتجمع بين طبقة الجلسات وطبقة المحاولات الفعلية.</p>
+</div>
+</section>
+<section class="section">
+<h2>ماذا حدث بعد كل اختيار؟</h2>
+<p class="sub">هذه القراءة على مستوى الجلسات: ماذا حصل بعد تسجيل الاختيار خلال 30 دقيقة.</p>
+<div class="tip-grid">
+<div class="surface">
+<div class="group"><div class="group-title">محادثة مباشرة</div><div class="group-meta">235 جلسة اختارت هذا المسار</div><div class="info-row"><span>بدأ اختبارًا بعدها</span><b>225 من 235 • 95.7%</b></div><div class="track"><div class="fill mint" style="width:95.7%"></div></div></div>
+<div class="group"><div class="group-title">اختبار كامل</div><div class="group-meta">45 جلسة اختارت هذا المسار</div><div class="info-row"><span>بدأ اختبارًا بعدها</span><b>41 من 45 • 91.1%</b></div><div class="track"><div class="fill" style="width:91.1%"></div></div></div>
+<div class="group"><div class="group-title">تخصيص الاختبار</div><div class="group-meta">49 جلسة اختارت هذا المسار</div><div class="info-row"><span>بدأ اختبارًا بعدها</span><b>47 من 49 • 95.9%</b></div><div class="track"><div class="fill mint" style="width:95.9%"></div></div></div>
+</div>
+<div class="surface">
+<div class="mini-card"><b>99 / 191</b><p>جلسة بلا اختيار مسجل وصلت مع ذلك إلى صفحة ما قبل الاختبار؛ لذلك غياب الـ event لا يعني دائمًا تسربًا فعليًا.</p></div>
+<div class="mini-card"><b>18 / 191</b><p>جلسة من المجموعة نفسها بدأت اختبارًا بالفعل رغم غياب اختيار مسجل.</p></div>
+<div class="mini-card"><b>93 / 191</b><p>جلسة سُجّل فيها إغلاق نافذة التهيئة. هذه ليست فئة منفصلة بالضرورة وقد تتقاطع مع الفروع الأخرى.</p></div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>نتيجة الاختبار الحقيقية من قاعدة البيانات</h2>
+<p class="sub">هنا وحدة القياس = محاولة اختبار فريدة مرتبطة بقاعدة الإنتاج، وليس مجرد click أو page view.</p>
+<div class="surface">
+<div class="group"><div class="group-title">محادثة سريعة</div><div class="group-details">153 محاولة تهيئة، 67 مكتملة، 38 مهجورة، 31 بتفاعل منخفض، 46 ظهرت نتائجها النشطة، 37 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>67 / 153 — 43.8%</b></div><div class="track"><div class="fill mint" style="width:43.8%"></div></div></div>
+<div class="group"><div class="group-title">اختبار كامل</div><div class="group-details">55 محاولة تهيئة، 8 مكتملة، 29 مهجورة، 14 بتفاعل منخفض، 10 ظهرت نتائجها النشطة، 5 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>8 / 55 — 14.5%</b></div><div class="track"><div class="fill red" style="width:14.5%"></div></div></div>
+<div class="group"><div class="group-title">التخصيص — المهارات أولًا</div><div class="group-details">39 محاولة تهيئة، 9 مكتملة، 17 مهجورة، 7 بتفاعل منخفض، 7 ظهرت نتائجها النشطة، 7 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>9 / 39 — 23.1%</b></div><div class="track"><div class="fill" style="width:23.1%"></div></div></div>
+<div class="group"><div class="group-title">التخصيص — الوقت أولًا</div><div class="group-details">24 محاولة تهيئة، 6 مكتملة، 7 مهجورة، 6 بتفاعل منخفض، 4 ظهرت نتائجها النشطة، 3 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>6 / 24 — 25.0%</b></div><div class="track"><div class="fill" style="width:25%"></div></div></div>
+<p class="sub" style="margin-top:12px;margin-bottom:0">توجد 5 محاولات تهيئة إضافية غير منسوبة بثقة إلى اختيار سابق، منها محاولة مكتملة واحدة.</p>
+</div>
+</section>
+<section class="section">
+<h2>شو نعمل الآن؟</h2>
+<p class="sub">الخطوة التالية المنطقية هي سحب التفريعات الدقيقة داخل المهارات والوقت، ثم إضافتها لنفس الـ Mind Map.</p>
+<div class="actions">
+<article class="action"><span class="priority">HIGH · تحليل</span><h3>اسحب تفصيل المهارات والوقت من المصدر</h3><p>هذه هي الفجوة الوحيدة التي منعتني من إكمال الشجرة حتى آخر اختيار داخل فرع التخصيص. بمجرد توفرها، نضيف: المهارة/المهارات المختارة، الوقت المختار، ثم نتيجتها حتى result engagement.</p><small>العائد: شجرة كاملة من أول خطوة إلى النتيجة</small></article>
+<article class="action"><span class="priority">HIGH · بيانات</span><h3>وحّد tracking لمسار التخصيص</h3><p>من الأفضل أن تحمل أحداث التخصيص النهائية نفس attempt_id أو journey_id بشكل صريح. هذا سيزيل الاعتماد على المطابقة الزمنية ويجعل الشجرة أدق.</p><small>العائد: تقارير أدق وأسهل في الصيانة</small></article>
+<article class="action"><span class="priority">MEDIUM · منتج</span><h3>ابدأ من فرع الاختبار الكامل</h3><p>هذا الفرع هو الأضعف في الإكمال الفعلي. بعد تثبيت بيانات التخصيص، راجع هذا المسار أولًا لأنه يعطيك أعلى فرصة لتحسين completion.</p><small>العائد: أثر أوضح على completion rate</small></article>
+</div>
+<div class="method"><strong>حدود الدقة:</strong> رُبطت المحاولة بمعرّفها الحقيقي المستخرج من الرابط ثم جرى وصلها بجدولي <code>user_exam_attempts</code> و <code>users</code>. نسب النتائج المؤكدة تأتي من المحاولات الفعلية. أما إسناد الاختيار إلى أقرب حدث سابق لنفس المستخدم خلال 15 دقيقة فهو استدلال زمني، وليس journey_id موحدًا. لذلك عرضت فجوة بيانات التخصيص كما هي بدل أن أملأها بأرقام غير مؤكدة.</div>
+</section>
+<div class="footer">
+<span>المصادر: PostHog Events + Production user_exam_attempts / users</span>
+<span>تم تحديث التقرير بصيغة Mind Map</span>
+<a href="https://eu.posthog.com/project/111712/dashboard/1067119" rel="noopener" target="_blank">النسخة الحية في PostHog</a>
+</div>
+</main>
+<script>
+(function(){
+  const details={
+    root:['بداية الرحلة','في 520 جلسة سعودية ظهرت نافذة Smart Onboarding خلال فترة القياس.'],
+    selected:['اختيار مسجل','329 جلسة، و313 منها بدأت اختبارًا بعد الاختيار خلال 30 دقيقة.'],
+    missing:['اختيار غير مسجل','191 جلسة، لكن 99 منها وصلت إلى ما قبل الاختبار و18 بدأت اختبارًا، لذلك لا نعدّها كلها تسربًا مؤكدًا.'],
+    speaking:['المحادثة مباشرة','235 جلسة اختارت هذا المسار؛ 225 منها بدأت اختبارًا بعدها خلال 30 دقيقة.'],
+    full:['الاختبار الكامل','45 جلسة اختارت اختبارًا كاملًا؛ 41 منها بدأت اختبارًا بعدها خلال 30 دقيقة.'],
+    custom:['التخصيص','49 جلسة اختارت التخصيص؛ 47 منها بدأت اختبارًا. يتفرع هذا المسار إلى مهارات أولًا ووقت أولًا وفرع واحد غير محدد.'],
+    skills:['المهارات أولًا','27 جلسة سلكت هذا الطريق؛ 26 بدأت اختبارًا. على مستوى المحاولات الفعلية هناك 39 محاولة Onboarding، منها 9 مكتملة و7 متفاعلة مع صفحة النتيجة.'],
+    time:['الوقت أولًا','21 جلسة سلكت هذا الطريق؛ 20 بدأت اختبارًا. على مستوى المحاولات الفعلية هناك 24 محاولة Onboarding، منها 6 مكتملة و3 متفاعلة مع صفحة النتيجة.'],
+    unknown:['غير محدد','جلسة واحدة لم نتمكن من إسنادها إلى طريقة تخصيص محددة بثقة.']
+  };
+  function activate(el){
+    document.querySelectorAll('.flow-canvas .node').forEach(x=>x.classList.remove('active'));
+    el.classList.add('active');
+    const v=details[el.dataset.key];
+    if(v){document.getElementById('selection-details').innerHTML='<b>'+v[0]+':</b> '+v[1];}
+  }
+  document.querySelectorAll('.flow-canvas .node').forEach(el=>{
+    el.addEventListener('click',()=>activate(el));
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(el);}});
+  });
+
+
+})();
+</script>
+<script>
+(function(){
+  'use strict';
+  const svg=document.getElementById('mind-svg');
+  const viewport=document.getElementById('mind-viewport');
+  if(!svg||!viewport)return;
+  const NS='http://www.w3.org/2000/svg';
+  const WIDTH=254, HEIGHT=91, GAP_X=325, GAP_Y=119, MARGIN=76;
+  const data={
+    id:'root',name:'ظهور الـ Onboarding',value:'520',meta:'جلسات سعودية • آخر 30 يومًا',kind:'root',children:[
+      {id:'selected',name:'اختيار مسجل',value:'329',meta:'313 بدأوا اختبارًا بعد الاختيار',kind:'positive',children:[
+        {id:'speaking',name:'محادثة مباشرة',value:'235',meta:'225 جلسة بدأت اختبارًا',children:[
+          {id:'sp-start',name:'بدأ اختبارًا',value:'225',meta:'جلسات خلال 30 دقيقة'},
+          {id:'sp-attempt',name:'محاولات Onboarding',value:'153',meta:'محاولات فريدة من قاعدة البيانات',children:[
+            {id:'sp-done',name:'اختبار مكتمل',value:'67',meta:'Completed • 43.8%'},
+            {id:'sp-result',name:'عرض صفحة النتيجة',value:'46',meta:'Active Result Page'},
+            {id:'sp-eng',name:'تفاعل فعلي مع النتيجة',value:'37',meta:'Results Actively Engaged',kind:'positive'}
+          ]}
+        ]},
+        {id:'full',name:'اختبار كامل',value:'45',meta:'41 جلسة بدأت اختبارًا',children:[
+          {id:'full-start',name:'بدأ اختبارًا',value:'41',meta:'جلسات خلال 30 دقيقة'},
+          {id:'full-attempt',name:'محاولات Onboarding',value:'55',meta:'محاولات فريدة من قاعدة البيانات',children:[
+            {id:'full-done',name:'اختبار مكتمل',value:'8',meta:'Completed • 14.5%'},
+            {id:'full-result',name:'عرض صفحة النتيجة',value:'10',meta:'Active Result Page'},
+            {id:'full-eng',name:'تفاعل فعلي مع النتيجة',value:'5',meta:'Results Actively Engaged',kind:'positive'}
+          ]}
+        ]},
+        {id:'custom',name:'تخصيص الاختبار',value:'49',meta:'47 جلسة بدأت اختبارًا',kind:'positive',children:[
+          {id:'skills',name:'المهارات أولًا',value:'27',meta:'26 جلسة بدأت اختبارًا',children:[
+            {id:'skills-selection',name:'تفاصيل المهارات المختارة',value:'—',meta:'لم تثبت بالأرقام حسب هذا الفرع',kind:'warning'},
+            {id:'skills-start',name:'بدأ اختبارًا',value:'26',meta:'جلسات بعد تسجيل الاختيار'},
+            {id:'skills-attempt',name:'محاولات Onboarding',value:'39',meta:'محاولات فريدة من قاعدة البيانات',children:[
+              {id:'skills-done',name:'اختبار مكتمل',value:'9',meta:'Completed • 23.1%'},
+              {id:'skills-result',name:'عرض صفحة النتيجة',value:'7',meta:'Active Result Page'},
+              {id:'skills-eng',name:'تفاعل فعلي مع النتيجة',value:'7',meta:'Results Actively Engaged',kind:'positive'}
+            ]}
+          ]},
+          {id:'time',name:'الوقت أولًا',value:'21',meta:'20 جلسة بدأت اختبارًا',children:[
+            {id:'time-selection',name:'تفاصيل الوقت المختار',value:'—',meta:'لم تثبت بالأرقام حسب هذا الفرع',kind:'warning'},
+            {id:'time-start',name:'بدأ اختبارًا',value:'20',meta:'جلسات بعد تسجيل الاختيار'},
+            {id:'time-attempt',name:'محاولات Onboarding',value:'24',meta:'محاولات فريدة من قاعدة البيانات',children:[
+              {id:'time-done',name:'اختبار مكتمل',value:'6',meta:'Completed • 25.0%'},
+              {id:'time-result',name:'عرض صفحة النتيجة',value:'4',meta:'Active Result Page'},
+              {id:'time-eng',name:'تفاعل فعلي مع النتيجة',value:'3',meta:'Results Actively Engaged',kind:'positive'}
+            ]}
+          ]},
+          {id:'unknown',name:'طريقة غير محددة',value:'1',meta:'لا يوجد إسناد موثوق'}
+        ]}
+      ]},
+      {id:'missing',name:'اختيار غير مسجل',value:'191',meta:'ليست كلها حالات تسرب',kind:'negative',children:[
+        {id:'missing-pretest',name:'وصلوا لما قبل الاختبار',value:'99',meta:'رغم عدم وجود اختيار مرصود'},
+        {id:'missing-start',name:'بدأوا اختبارًا',value:'18',meta:'لم يسجل اختيارهم'},
+        {id:'missing-closed',name:'أغلقوا نافذة التهيئة',value:'93',meta:'متداخل مع فروع أخرى'}
+      ]}
+    ]
+  };
+  const byId=new Map();
+  function index(node){byId.set(node.id,node);(node.children||[]).forEach(index)}
+  index(data);
+  const defaults=['root','selected','custom'];
+  const expanded=new Set(defaults);
+  let zoom=.9, lastFocus='root';
+  function el(tag,attrs,parent){const out=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs||{}))out.setAttribute(k,String(v));if(parent)parent.appendChild(out);return out}
+  function text(parent,x,y,str,cls,anchor='start'){
+    const o=el('text',{x,y,'text-anchor':anchor,'class':cls,direction:'rtl'},parent);
+    o.textContent=str;return o;
+  }
+  function activeChildren(n){return expanded.has(n.id)?(n.children||[]):[]}
+  function buildLayout(){
+    let row=0,maxDepth=0;const visible=[];
+    function visit(n,depth){
+      maxDepth=Math.max(maxDepth,depth);
+      const ch=activeChildren(n);
+      let cy;
+      if(ch.length){const centers=ch.map(x=>visit(x,depth+1));cy=(centers[0]+centers[centers.length-1])/2;}
+      else cy=MARGIN+HEIGHT/2+row++*GAP_Y;
+      n._draw={depth,cy};visible.push(n);return cy;
+    }
+    visit(data,0);
+    const width=Math.max(1050,2*MARGIN+WIDTH+maxDepth*GAP_X);
+    const height=Math.max(440,row*GAP_Y+2*MARGIN);
+    for(const n of visible)n._draw.x=width-MARGIN-WIDTH-n._draw.depth*GAP_X;
+    return {visible,width,height};
+  }
+  function draw(options={}){
+    const layout=buildLayout();
+    const {visible,width,height}=layout;
+    svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
+    svg.setAttribute('width',width*zoom);
+    svg.setAttribute('height',height*zoom);
+    svg.replaceChildren();
+    const edges=el('g',{'aria-hidden':'true'},svg);
+    const nodes=el('g',{},svg);
+    for(const parent of visible){
+      for(const c of activeChildren(parent)){
+        const a=parent._draw,b=c._draw;
+        const x1=a.x-24,x2=b.x+WIDTH,y1=a.cy,y2=b.cy;
+        const mid=(x1+x2)/2;
+        el('path',{d:`M${x1} ${y1} C${mid} ${y1}, ${mid} ${y2}, ${x2} ${y2}`,
+          'class':'mind-edge '+(c.kind==='negative'?'negative':c.kind==='positive'?'custom':'')},edges);
+      }
+    }
+    for(const n of visible){
+      const p=n._draw,hasChildren=Boolean(n.children?.length);
+      const g=el('g',{'class':'mind-node','data-id':n.id,'data-kind':n.kind||'normal','data-children':hasChildren,'tabindex':hasChildren?'0':'-1','role':hasChildren?'button':'group'},nodes);
+      if(hasChildren)g.setAttribute('aria-expanded',expanded.has(n.id)?'true':'false');
+      g.setAttribute('aria-label',`${n.name}: ${n.value}${hasChildren?'، اضغط لفتح أو إغلاق الفروع':''}`);
+      el('rect',{x:p.x,y:p.cy-HEIGHT/2,width:WIDTH,height:HEIGHT,rx:14,'class':'mind-rect'},g);
+      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+24,n.name,'mind-title');
+      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+56,n.value,'mind-value');
+      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+76,n.meta||'','mind-meta');
+      if(hasChildren){
+        const cx=p.x-17;
+        el('circle',{cx,cy:p.cy,r:14,'class':'mind-toggle-disc'},g);
+        text(g,cx,p.cy+6,expanded.has(n.id)?'−':'+','mind-toggle-text','middle');
+      }
+      el('title',{},g).textContent=n.name+' — '+n.value;
+    }
+    document.getElementById('mind-zoom-label').textContent=Math.round(zoom*100)+'%';
+    if(options.focus){
+      const n=byId.get(options.focus);
+      if(n&&n._draw){
+        const cy=n._draw.cy*zoom;
+        const xc=(n._draw.x+WIDTH/2)*zoom;
+        viewport.scrollTop=Math.max(0,cy-viewport.clientHeight/2);
+        const fullWidth=width*zoom;
+        viewport.scrollLeft=Math.max(viewport.clientWidth-fullWidth,Math.min(0,xc-fullWidth+viewport.clientWidth/2));
+      }
+    }
+  }
+  function toggle(id){const n=byId.get(id);if(!n?.children?.length)return;
+    if(expanded.has(id))expanded.delete(id);else expanded.add(id);
+    lastFocus=id;draw({focus:id});
+  }
+  svg.addEventListener('click',e=>{const g=e.target.closest('.mind-node');if(g)toggle(g.dataset.id)});
+  svg.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const g=e.target.closest('.mind-node');if(!g)return;e.preventDefault();toggle(g.dataset.id)});
+  document.getElementById('mind-expand').addEventListener('click',()=>{for(const [id,n] of byId)if(n.children?.length)expanded.add(id);draw({focus:'root'})});
+  document.getElementById('mind-collapse').addEventListener('click',()=>{expanded.clear();expanded.add('root');draw({focus:'root'})});
+  document.getElementById('mind-reset').addEventListener('click',()=>{expanded.clear();defaults.forEach(x=>expanded.add(x));zoom=.9;draw();viewport.scrollTop=0;viewport.scrollLeft=0});
+  document.getElementById('mind-zoom-in').addEventListener('click',()=>{zoom=Math.min(1.6,Math.round((zoom+.1)*10)/10);draw({focus:lastFocus})});
+  document.getElementById('mind-zoom-out').addEventListener('click',()=>{zoom=Math.max(.5,Math.round((zoom-.1)*10)/10);draw({focus:lastFocus})});
+  let drag=null;
+  viewport.addEventListener('pointerdown',e=>{if(e.target.closest('.mind-node'))return;
+    if(e.button!==0)return;drag={x:e.clientX,y:e.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};
+    viewport.classList.add('grabbing');
+  });
+  viewport.addEventListener('pointermove',e=>{if(!drag)return;
+    viewport.scrollLeft=drag.left+drag.x-e.clientX;
+    viewport.scrollTop=drag.top+drag.y-e.clientY;
+  });
+  for(const name of ['pointerup','pointercancel','pointerleave'])viewport.addEventListener(name,()=>{drag=null;viewport.classList.remove('grabbing')});
+  draw();
+  viewport.scrollTop=0;viewport.scrollLeft=0;
+})();
+</script></body>
+</html>
