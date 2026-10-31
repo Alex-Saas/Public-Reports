@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-
-<html dir="rtl" lang="ar">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>GoIELTS | Smart Onboarding Mind Map</title>
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GoIELTS | Smart Onboarding — Verified Mind Map</title>
 <style>
 :root{
   --navy:#0a2b65;--ink:#1c3050;--muted:#66778d;--blue:#2d5aab;--teal:#0b8b86;--teal-bg:#eef9f8;
@@ -118,219 +114,69 @@ h1{margin:12px 0 10px;font-size:clamp(24px,3vw,38px);line-height:1.35}
 .mind-toggle-text{font-family:Arial,sans-serif;font-size:19px;font-weight:bold;fill:#2453a0;pointer-events:none}
 .mind-footnote{font-size:12px;line-height:1.9;color:#596d85;padding:12px 18px 15px;margin:0;border-top:1px solid #e3eaf3;background:#fbfcfe}
 @media(max-width:650px){.mind-toolbar{padding:12px}.mind-actions{gap:5px}.mind-actions button{padding:5px 8px}.mind-viewport{height:500px;max-height:65vh}}
-</style>
-</head>
-<body>
-<main class="container">
-<section class="hero">
-<div class="eyebrow">GOIELTS.AI / SMART ONBOARDING / SAUDI ARABIA</div>
-<h1>خريطة Smart Onboarding: من الظهور حتى النتيجة والتفاعل معها</h1>
-<p>نسخة محدثة من التقرير مع خريطة ذهنية قابلة للفتح والإغلاق، وشجرة مرئية سريعة، وربط نتائج الاختبار الفعلية بقاعدة البيانات. أضفت امتداد المسارات حتى <b>Active Result</b> و <b>Engaged with Result Page</b> حيثما كانت البيانات متاحة.</p>
-<div class="meta">
-<span class="pill">آخر 30 يومًا حتى 29 أكتوبر 2026</span>
-<span class="pill">السعودية فقط</span>
-<span class="pill">بدون الحسابات الداخلية المعروفة</span>
-<span class="pill">مصدران: PostHog + Production DB</span>
-</div>
-<div class="top-actions">
-<a class="btn primary" href="https://eu.posthog.com/project/111712/dashboard/1067119" rel="noopener" target="_blank">افتح الداشبورد المباشر ↗</a>
-<a class="btn secondary" href="#mindmap">اذهب إلى الـ Mind Map</a>
-</div>
-</section>
-<section class="section">
-<div class="metrics">
-<div class="metric"><div class="k">جلسات ظهر فيها الـ Onboarding</div><strong>520</strong><div class="foot">وحدة القياس هنا هي الجلسة</div></div>
-<div class="metric"><div class="k">اختيارات مسجلة خلال 30 دقيقة</div><strong>329</strong><div class="foot">63.3% من جلسات الظهور</div></div>
-<div class="metric alert"><div class="k">جلسات بدون اختيار مسجل</div><strong>191</strong><div class="foot">ليست كلها تسربًا فعليًا</div></div>
-<div class="metric good"><div class="k">بدأوا اختبارًا بعد الاختيار</div><strong>313</strong><div class="foot">95.1% من الجلسات التي سجلت اختيارًا</div></div>
-</div>
-</section>
 
-<section class="section" id="mindmap">
-<h2>خريطة المسارات التفاعلية</h2>
-<p class="sub">الفروع تتقدم أفقيًا من اليمين إلى اليسار. اضغط على علامة + أمام أي مرحلة لفتح تفاصيلها، وعلى − لإغلاقها. يمكن سحب مساحة الرسم وتكبيرها.</p>
-<div class="mind-panel surface">
-<div class="mind-toolbar">
-<div class="mind-toolbar-label"><span class="mind-live"></span> خريطة جلسات السعودية ونتائج المحاولات</div>
-<div class="mind-actions">
-<button id="mind-expand" type="button">فتح جميع الفروع</button>
-<button id="mind-collapse" type="button">إغلاق الفروع</button>
-<button aria-label="تصغير" id="mind-zoom-out" type="button">−</button>
-<span aria-live="polite" id="mind-zoom-label">100%</span>
-<button aria-label="تكبير" id="mind-zoom-in" type="button">+</button>
-<button id="mind-reset" type="button">إعادة الضبط</button>
-</div>
-</div>
-<div aria-label="خريطة شجرة Smart Onboarding" class="mind-viewport" id="mind-viewport" role="region" tabindex="0">
-<svg aria-label="مخطط تفريعي يبدأ من ظهور التهيئة وصولاً إلى التفاعل مع صفحة النتيجة" class="mind-svg" id="mind-svg" role="img" xmlns="http://www.w3.org/2000/svg"></svg>
-<noscript><p>هذا الرسم يحتاج تفعيل JavaScript للتفاعل. يمكن الاطلاع على جداول النتائج في الأقسام التالية.</p></noscript>
-</div>
-<p class="mind-footnote">ملاحظة: الأعداد عند بداية المسار على مستوى <b>الجلسات</b>، بينما نتائج الاختبار على مستوى <b>محاولات فردية</b>. النتائج (الإكمال، عرض الصفحة، التفاعل) مؤشرات متقاطعة وليست مراحل يجب جمعها. لا يوجد هنا ربط واحد-لواحد بين إجمالي الجلسات والمحاولات.</p>
-</div>
-</section>
-
-<section class="section">
-<h2>شجرة سريعة بشكل بصري</h2>
-<p class="sub">نفس الشجرة المختصرة السابقة، للاطلاع السريع. اضغط على أي عقدة لترى وصفها.</p>
-<div class="surface">
-<div class="diagram-scroll">
-<svg aria-labelledby="chartTitle chartDesc" class="flow-canvas" role="img" viewbox="0 0 1340 700" xmlns="http://www.w3.org/2000/svg">
-<title id="chartTitle">شجرة Smart Onboarding للسعودية</title>
-<desc id="chartDesc">520 جلسة ظهور، 329 اختيارًا مسجلًا، 191 بدون اختيار؛ 235 محادثة و45 اختبارًا كاملًا و49 تخصيصًا؛ منها 27 مهارات أولًا و21 وقتًا أولًا وواحدة غير معروفة.</desc>
-<defs><filter height="170%" id="softshadow" width="150%" x="-20%" y="-35%"><fedropshadow dx="0" dy="3" flood-opacity=".075" stddeviation="5"></fedropshadow></filter></defs>
-<path class="edge" d="M1082 320 C1035 320 1065 196 1016 196"></path>
-<path class="edge danger" d="M1082 320 C1037 320 1058 469 1016 469"></path>
-<path class="edge" d="M770 196 C724 196 748 102 705 102"></path>
-<path class="edge" d="M770 196 C729 196 749 247 705 247"></path>
-<path class="edge custom" d="M770 196 C722 196 747 392 705 392"></path>
-<path class="edge custom" d="M448 392 C398 392 423 354 367 354"></path>
-<path class="edge custom" d="M448 392 C397 392 425 487 367 487"></path>
-<path class="edge custom" d="M448 392 C392 392 427 613 367 613"></path>
-<g aria-label="ظهر الـ Onboarding في 520 جلسة" class="node primary active" data-key="root" role="button" tabindex="0"><rect class="rect" height="103" rx="17" width="224" x="1082" y="270"></rect><text class="node-title" x="1194" y="304">ظهور الـ Onboarding</text><text class="node-value" x="1194" y="345">520</text></g>
-<g aria-label="329 جلسة سجلت اختيارًا" class="node positive" data-key="selected" role="button" tabindex="0"><rect class="rect" height="108" rx="17" width="246" x="770" y="143"></rect><text class="node-title" x="893" y="176">اختيار مسجّل</text><text class="node-value" x="893" y="219">329</text></g>
-<g aria-label="191 جلسة بلا اختيار مسجل" class="node negative" data-key="missing" role="button" tabindex="0"><rect class="rect" height="107" rx="17" width="246" x="770" y="416"></rect><text class="node-title" x="893" y="451">لا يوجد اختيار مسجل</text><text class="node-value" x="893" y="495">191</text></g>
-<g class="node" data-key="speaking" role="button" tabindex="0"><rect class="rect" height="104" rx="17" width="257" x="448" y="51"></rect><text class="node-title" x="576" y="86">محادثة مباشرة</text><text class="node-value" x="576" y="127">235</text></g>
-<g class="node" data-key="full" role="button" tabindex="0"><rect class="rect" height="104" rx="17" width="257" x="448" y="196"></rect><text class="node-title" x="576" y="231">اختبار كامل</text><text class="node-value" x="576" y="272">45</text></g>
-<g class="node positive" data-key="custom" role="button" tabindex="0"><rect class="rect" height="104" rx="17" width="257" x="448" y="341"></rect><text class="node-title" x="576" y="376">تخصيص الاختبار</text><text class="node-value" x="576" y="417">49</text></g>
-<g class="node" data-key="skills" role="button" tabindex="0"><rect class="rect" height="100" rx="17" width="279" x="88" y="303"></rect><text class="node-title" x="227" y="339">المهارات أولًا</text><text class="node-value" x="227" y="377">27</text></g>
-<g class="node" data-key="time" role="button" tabindex="0"><rect class="rect" height="100" rx="17" width="279" x="88" y="436"></rect><text class="node-title" x="227" y="472">الوقت أولًا</text><text class="node-value" x="227" y="510">21</text></g>
-<g class="node" data-key="unknown" role="button" tabindex="0"><rect class="rect" height="93" rx="17" width="279" x="88" y="566"></rect><text class="node-title" x="227" y="601">فرع غير محدد</text><text class="node-value" x="227" y="638">1</text></g>
-</svg>
-</div>
-<div class="legend"><span><i class="dot"></i>مسارات التصفح والاختيار</span><span><i class="dot red"></i>اختيار غير مسجل</span><span><i class="dot teal"></i>التخصيص</span></div>
-<div aria-live="polite" class="selection-details" id="selection-details"><b>بداية الرحلة:</b> في 520 جلسة سعودية ظهرت نافذة Smart Onboarding خلال فترة القياس.</div>
-<p class="sub" style="margin-top:10px;margin-bottom:0">الأرقام في هذه الشجرة تخص الجلسات لا المحاولات. لهذا السبب أضفت الـ Mind Map بالأعلى لتجمع بين طبقة الجلسات وطبقة المحاولات الفعلية.</p>
-</div>
-</section>
-<section class="section">
-<h2>ماذا حدث بعد كل اختيار؟</h2>
-<p class="sub">هذه القراءة على مستوى الجلسات: ماذا حصل بعد تسجيل الاختيار خلال 30 دقيقة.</p>
-<div class="tip-grid">
-<div class="surface">
-<div class="group"><div class="group-title">محادثة مباشرة</div><div class="group-meta">235 جلسة اختارت هذا المسار</div><div class="info-row"><span>بدأ اختبارًا بعدها</span><b>225 من 235 • 95.7%</b></div><div class="track"><div class="fill mint" style="width:95.7%"></div></div></div>
-<div class="group"><div class="group-title">اختبار كامل</div><div class="group-meta">45 جلسة اختارت هذا المسار</div><div class="info-row"><span>بدأ اختبارًا بعدها</span><b>41 من 45 • 91.1%</b></div><div class="track"><div class="fill" style="width:91.1%"></div></div></div>
-<div class="group"><div class="group-title">تخصيص الاختبار</div><div class="group-meta">49 جلسة اختارت هذا المسار</div><div class="info-row"><span>بدأ اختبارًا بعدها</span><b>47 من 49 • 95.9%</b></div><div class="track"><div class="fill mint" style="width:95.9%"></div></div></div>
-</div>
-<div class="surface">
-<div class="mini-card"><b>99 / 191</b><p>جلسة بلا اختيار مسجل وصلت مع ذلك إلى صفحة ما قبل الاختبار؛ لذلك غياب الـ event لا يعني دائمًا تسربًا فعليًا.</p></div>
-<div class="mini-card"><b>18 / 191</b><p>جلسة من المجموعة نفسها بدأت اختبارًا بالفعل رغم غياب اختيار مسجل.</p></div>
-<div class="mini-card"><b>93 / 191</b><p>جلسة سُجّل فيها إغلاق نافذة التهيئة. هذه ليست فئة منفصلة بالضرورة وقد تتقاطع مع الفروع الأخرى.</p></div>
-</div>
-</div>
-</section>
-<section class="section">
-<h2>نتيجة الاختبار الحقيقية من قاعدة البيانات</h2>
-<p class="sub">هنا وحدة القياس = محاولة اختبار فريدة مرتبطة بقاعدة الإنتاج، وليس مجرد click أو page view.</p>
-<div class="surface">
-<div class="group"><div class="group-title">محادثة سريعة</div><div class="group-details">153 محاولة تهيئة، 67 مكتملة، 38 مهجورة، 31 بتفاعل منخفض، 46 ظهرت نتائجها النشطة، 37 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>67 / 153 — 43.8%</b></div><div class="track"><div class="fill mint" style="width:43.8%"></div></div></div>
-<div class="group"><div class="group-title">اختبار كامل</div><div class="group-details">55 محاولة تهيئة، 8 مكتملة، 29 مهجورة، 14 بتفاعل منخفض، 10 ظهرت نتائجها النشطة، 5 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>8 / 55 — 14.5%</b></div><div class="track"><div class="fill red" style="width:14.5%"></div></div></div>
-<div class="group"><div class="group-title">التخصيص — المهارات أولًا</div><div class="group-details">39 محاولة تهيئة، 9 مكتملة، 17 مهجورة، 7 بتفاعل منخفض، 7 ظهرت نتائجها النشطة، 7 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>9 / 39 — 23.1%</b></div><div class="track"><div class="fill" style="width:23.1%"></div></div></div>
-<div class="group"><div class="group-title">التخصيص — الوقت أولًا</div><div class="group-details">24 محاولة تهيئة، 6 مكتملة، 7 مهجورة، 6 بتفاعل منخفض، 4 ظهرت نتائجها النشطة، 3 فيها تفاعل مع صفحة النتيجة.</div><div class="info-row"><span>نسبة الإكمال المؤكدة</span><b>6 / 24 — 25.0%</b></div><div class="track"><div class="fill" style="width:25%"></div></div></div>
-<p class="sub" style="margin-top:12px;margin-bottom:0">توجد 5 محاولات تهيئة إضافية غير منسوبة بثقة إلى اختيار سابق، منها محاولة مكتملة واحدة.</p>
-</div>
-</section>
-<section class="section">
-<h2>شو نعمل الآن؟</h2>
-<p class="sub">الخطوة التالية المنطقية هي سحب التفريعات الدقيقة داخل المهارات والوقت، ثم إضافتها لنفس الـ Mind Map.</p>
-<div class="actions">
-<article class="action"><span class="priority">HIGH · تحليل</span><h3>اسحب تفصيل المهارات والوقت من المصدر</h3><p>هذه هي الفجوة الوحيدة التي منعتني من إكمال الشجرة حتى آخر اختيار داخل فرع التخصيص. بمجرد توفرها، نضيف: المهارة/المهارات المختارة، الوقت المختار، ثم نتيجتها حتى result engagement.</p><small>العائد: شجرة كاملة من أول خطوة إلى النتيجة</small></article>
-<article class="action"><span class="priority">HIGH · بيانات</span><h3>وحّد tracking لمسار التخصيص</h3><p>من الأفضل أن تحمل أحداث التخصيص النهائية نفس attempt_id أو journey_id بشكل صريح. هذا سيزيل الاعتماد على المطابقة الزمنية ويجعل الشجرة أدق.</p><small>العائد: تقارير أدق وأسهل في الصيانة</small></article>
-<article class="action"><span class="priority">MEDIUM · منتج</span><h3>ابدأ من فرع الاختبار الكامل</h3><p>هذا الفرع هو الأضعف في الإكمال الفعلي. بعد تثبيت بيانات التخصيص، راجع هذا المسار أولًا لأنه يعطيك أعلى فرصة لتحسين completion.</p><small>العائد: أثر أوضح على completion rate</small></article>
-</div>
-<div class="method"><strong>حدود الدقة:</strong> رُبطت المحاولة بمعرّفها الحقيقي المستخرج من الرابط ثم جرى وصلها بجدولي <code>user_exam_attempts</code> و <code>users</code>. نسب النتائج المؤكدة تأتي من المحاولات الفعلية. أما إسناد الاختيار إلى أقرب حدث سابق لنفس المستخدم خلال 15 دقيقة فهو استدلال زمني، وليس journey_id موحدًا. لذلك عرضت فجوة بيانات التخصيص كما هي بدل أن أملأها بأرقام غير مؤكدة.</div>
-</section>
-<div class="footer">
-<span>المصادر: PostHog Events + Production user_exam_attempts / users</span>
-<span>تم تحديث التقرير بصيغة Mind Map</span>
-<a href="https://eu.posthog.com/project/111712/dashboard/1067119" rel="noopener" target="_blank">النسخة الحية في PostHog</a>
-</div>
-</main>
-<script>
-(function(){
-  const details={
-    root:['بداية الرحلة','في 520 جلسة سعودية ظهرت نافذة Smart Onboarding خلال فترة القياس.'],
-    selected:['اختيار مسجل','329 جلسة، و313 منها بدأت اختبارًا بعد الاختيار خلال 30 دقيقة.'],
-    missing:['اختيار غير مسجل','191 جلسة، لكن 99 منها وصلت إلى ما قبل الاختبار و18 بدأت اختبارًا، لذلك لا نعدّها كلها تسربًا مؤكدًا.'],
-    speaking:['المحادثة مباشرة','235 جلسة اختارت هذا المسار؛ 225 منها بدأت اختبارًا بعدها خلال 30 دقيقة.'],
-    full:['الاختبار الكامل','45 جلسة اختارت اختبارًا كاملًا؛ 41 منها بدأت اختبارًا بعدها خلال 30 دقيقة.'],
-    custom:['التخصيص','49 جلسة اختارت التخصيص؛ 47 منها بدأت اختبارًا. يتفرع هذا المسار إلى مهارات أولًا ووقت أولًا وفرع واحد غير محدد.'],
-    skills:['المهارات أولًا','27 جلسة سلكت هذا الطريق؛ 26 بدأت اختبارًا. على مستوى المحاولات الفعلية هناك 39 محاولة Onboarding، منها 9 مكتملة و7 متفاعلة مع صفحة النتيجة.'],
-    time:['الوقت أولًا','21 جلسة سلكت هذا الطريق؛ 20 بدأت اختبارًا. على مستوى المحاولات الفعلية هناك 24 محاولة Onboarding، منها 6 مكتملة و3 متفاعلة مع صفحة النتيجة.'],
-    unknown:['غير محدد','جلسة واحدة لم نتمكن من إسنادها إلى طريقة تخصيص محددة بثقة.']
-  };
-  function activate(el){
-    document.querySelectorAll('.flow-canvas .node').forEach(x=>x.classList.remove('active'));
-    el.classList.add('active');
-    const v=details[el.dataset.key];
-    if(v){document.getElementById('selection-details').innerHTML='<b>'+v[0]+':</b> '+v[1];}
-  }
-  document.querySelectorAll('.flow-canvas .node').forEach(el=>{
-    el.addEventListener('click',()=>activate(el));
-    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(el);}});
-  });
-
-
-})();
-</script>
-<script>
-(function(){
-  'use strict';
-  const svg=document.getElementById('mind-svg');
-  const viewport=document.getElementById('mind-viewport');
-  if(!svg||!viewport)return;
-  const NS='http://www.w3.org/2000/svg';
-  const WIDTH=254, HEIGHT=91, GAP_X=325, GAP_Y=119, MARGIN=76;
-  const data={
-    id:'root',name:'ظهور الـ Onboarding',value:'520',meta:'جلسات سعودية • آخر 30 يومًا',kind:'root',children:[
-      {id:'selected',name:'اختيار مسجل',value:'329',meta:'313 بدأوا اختبارًا بعد الاختيار',kind:'positive',children:[
-        {id:'speaking',name:'محادثة مباشرة',value:'235',meta:'225 جلسة بدأت اختبارًا',children:[
-          {id:'sp-start',name:'بدأ اختبارًا',value:'225',meta:'جلسات خلال 30 دقيقة'},
-          {id:'sp-attempt',name:'محاولات Onboarding',value:'153',meta:'محاولات فريدة من قاعدة البيانات',children:[
-            {id:'sp-done',name:'اختبار مكتمل',value:'67',meta:'Completed • 43.8%'},
-            {id:'sp-result',name:'عرض صفحة النتيجة',value:'46',meta:'Active Result Page'},
-            {id:'sp-eng',name:'تفاعل فعلي مع النتيجة',value:'37',meta:'Results Actively Engaged',kind:'positive'}
-          ]}
-        ]},
-        {id:'full',name:'اختبار كامل',value:'45',meta:'41 جلسة بدأت اختبارًا',children:[
-          {id:'full-start',name:'بدأ اختبارًا',value:'41',meta:'جلسات خلال 30 دقيقة'},
-          {id:'full-attempt',name:'محاولات Onboarding',value:'55',meta:'محاولات فريدة من قاعدة البيانات',children:[
-            {id:'full-done',name:'اختبار مكتمل',value:'8',meta:'Completed • 14.5%'},
-            {id:'full-result',name:'عرض صفحة النتيجة',value:'10',meta:'Active Result Page'},
-            {id:'full-eng',name:'تفاعل فعلي مع النتيجة',value:'5',meta:'Results Actively Engaged',kind:'positive'}
-          ]}
-        ]},
-        {id:'custom',name:'تخصيص الاختبار',value:'49',meta:'47 جلسة بدأت اختبارًا',kind:'positive',children:[
-          {id:'skills',name:'المهارات أولًا',value:'27',meta:'26 جلسة بدأت اختبارًا',children:[
-            {id:'skills-selection',name:'تفاصيل المهارات المختارة',value:'—',meta:'لم تثبت بالأرقام حسب هذا الفرع',kind:'warning'},
-            {id:'skills-start',name:'بدأ اختبارًا',value:'26',meta:'جلسات بعد تسجيل الاختيار'},
-            {id:'skills-attempt',name:'محاولات Onboarding',value:'39',meta:'محاولات فريدة من قاعدة البيانات',children:[
-              {id:'skills-done',name:'اختبار مكتمل',value:'9',meta:'Completed • 23.1%'},
-              {id:'skills-result',name:'عرض صفحة النتيجة',value:'7',meta:'Active Result Page'},
-              {id:'skills-eng',name:'تفاعل فعلي مع النتيجة',value:'7',meta:'Results Actively Engaged',kind:'positive'}
-            ]}
-          ]},
-          {id:'time',name:'الوقت أولًا',value:'21',meta:'20 جلسة بدأت اختبارًا',children:[
-            {id:'time-selection',name:'تفاصيل الوقت المختار',value:'—',meta:'لم تثبت بالأرقام حسب هذا الفرع',kind:'warning'},
-            {id:'time-start',name:'بدأ اختبارًا',value:'20',meta:'جلسات بعد تسجيل الاختيار'},
-            {id:'time-attempt',name:'محاولات Onboarding',value:'24',meta:'محاولات فريدة من قاعدة البيانات',children:[
-              {id:'time-done',name:'اختبار مكتمل',value:'6',meta:'Completed • 25.0%'},
-              {id:'time-result',name:'عرض صفحة النتيجة',value:'4',meta:'Active Result Page'},
-              {id:'time-eng',name:'تفاعل فعلي مع النتيجة',value:'3',meta:'Results Actively Engaged',kind:'positive'}
-            ]}
-          ]},
-          {id:'unknown',name:'طريقة غير محددة',value:'1',meta:'لا يوجد إسناد موثوق'}
-        ]}
-      ]},
-      {id:'missing',name:'اختيار غير مسجل',value:'191',meta:'ليست كلها حالات تسرب',kind:'negative',children:[
-        {id:'missing-pretest',name:'وصلوا لما قبل الاختبار',value:'99',meta:'رغم عدم وجود اختيار مرصود'},
-        {id:'missing-start',name:'بدأوا اختبارًا',value:'18',meta:'لم يسجل اختيارهم'},
-        {id:'missing-closed',name:'أغلقوا نافذة التهيئة',value:'93',meta:'متداخل مع فروع أخرى'}
-      ]}
-    ]
-  };
+/* Reviewed dashboard improvements */
+.mind-toolbar{background:#f6f9ff}.mind-viewport{height:700px}
+.mind-selected-card{border:1px solid #cbd8eb;background:#f6f9fc;border-radius:13px;padding:15px 18px;color:#274565;font-size:13px;line-height:1.8;margin:14px 16px}
+.mind-selected-card b{color:#092451}
+.flow-metrics-table{width:100%;border-collapse:collapse;font-size:13px;min-width:740px}
+.flow-metrics-table th{text-align:right;background:#f1f5fb;color:#28476b;white-space:nowrap}
+.flow-metrics-table th,.flow-metrics-table td{border-bottom:1px solid #e7edf4;padding:12px 11px}
+.flow-metrics-table td.numeric{text-align:center;font-weight:750;direction:ltr}
+.flow-metrics-table tr:hover{background:#fafcfe}.flow-metrics-table .muted{font-weight:400;color:#6c7a90;font-size:11px}
+.table-wrap{overflow-x:auto}.copy-note{font-size:12px;color:#60728d;line-height:1.85}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.soft-badge{border:1px solid #dce7f2;background:#f5f8fc;padding:4px 11px;border-radius:16px;font-size:12px;color:#365a84}
+.mind-title{font-size:15px}.mind-meta{font-size:10.6px}.mind-value{font-size:27px}
+.mind-edge.flow{stroke:#6d99d3;stroke-width:3}.mind-node[data-kind="positive"] .mind-rect{fill:#e6f8f3}
+@media (max-width:650px){.mind-selected-card{margin:10px}.mind-viewport{height:550px}}
+</style></head><body><main class="container">
+<section class="hero"><div class="eyebrow">GOIELTS.AI / PRODUCT ANALYTICS / SAUDI ARABIA</div>
+<h1>خريطة Smart Onboarding: المسارات والاختيارات والنتائج</h1>
+<p>شجرة أفقية قابلة للفتح والإغلاق توضح الرحلة بالترتيب: اختيار المسار، ثم اختيار المهارات أو المدة، ثم بدء الاختبار، وإكماله، وعرض صفحة نتيجته، والتفاعل معها.</p>
+<div class="meta"><span class="pill">1 أكتوبر إلى 31 أكتوبر 2026 • 30 يومًا</span><span class="pill">البيانات حتى 13:45 بتوقيت تركيا</span><span class="pill">السعودية فقط</span><span class="pill">استبعاد الحسابات الداخلية المعروفة</span><span class="pill">PostHog + Production DB</span></div>
+<div class="top-actions"><a class="btn primary" href="https://eu.posthog.com/project/111712/dashboard/1067119" target="_blank" rel="noopener">الداشبورد المصدر في PostHog ↗</a><a class="btn secondary" href="#mindmap">افتح الشجرة ↓</a></div></section>
+<section class="section"><div class="metrics">
+<div class="metric"><div class="k">مستخدمون فريدون ظهر لهم Onboarding</div><strong>525</strong><div class="foot">العدد الفريد على مستوى المستخدمين</div></div>
+<div class="metric"><div class="k">جلسات ظهر فيها Onboarding</div><strong>572</strong><div class="foot">نحسب تفرعات المسار على مستوى الجلسة</div></div>
+<div class="metric"><div class="k">جلسات اختارت مسارًا</div><strong>362</strong><div class="foot">63.3% من جلسات الظهور</div></div>
+<div class="metric good"><div class="k">جلسات بدأت اختبارًا بعد اختيار المسار</div><strong>353</strong><div class="foot">97.5% من الجلسات التي سجّلت اختيارًا</div></div>
+</div></section>
+<section class="section" id="mindmap"><h2>شجرة الرحلة الفعلية</h2>
+<p class="sub">التفرعات تتجه من اليمين إلى اليسار. استخدم علامة + أمام العقدة لتفصيل اختيارات الوقت والمهارات، ثم تابع إلى النتيجة.</p>
+<div class="mind-panel surface"><div class="mind-toolbar"><div class="mind-toolbar-label"><span class="mind-live"></span> شجرة خيارات سعودية مثبتة بتاريخ 31 أكتوبر</div>
+<div class="mind-actions"><button type="button" id="mind-expand">فتح جميع الفروع</button><button type="button" id="mind-collapse">إغلاق الفروع</button>
+<button type="button" id="mind-zoom-out" aria-label="تصغير">−</button><span id="mind-zoom-label" aria-live="polite">90%</span><button type="button" id="mind-zoom-in" aria-label="تكبير">+</button><button type="button" id="mind-reset">إعادة الضبط</button></div></div>
+<div class="mind-viewport" id="mind-viewport" tabindex="0" role="region" aria-label="خريطة Smart Onboarding وتفرعات المهارات والوقت مع النتائج">
+<svg class="mind-svg" id="mind-svg" role="img" aria-label="شجرة المسارات ومراحل التحويل المتتابعة" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div class="mind-selected-card" id="node-details" aria-live="polite">اختر أي عقدة لعرض أرقامها وتفاصيلها.</div>
+<p class="mind-footnote">المسار الرئيسي بعد بدء الاختبار يعرض <b>Completed → Result Page View → Results Engaged</b> بالترتيب، وكل رقم فيه من نفس مجموعة المحاولات السابقة (Strict funnel). حالة <b>Test Submitted</b> ظاهرة داخل تفاصيل العقدة وفي الجدول أسفل الخريطة، لأنها ليست مسجلة لكل المحاولات المكتملة. المؤشرات الأخرى مثل <b>Abandoned</b> و<b>Low Engagement</b> ليست مراحل تالية للإكمال ولا يجوز جمعها معه.</p>
+</div></section>
+<section class="section"><h2>ملخص نتائج كل مسار</h2><p class="sub">كل صف يبدأ بجلسات الاختيار ويتتبع أول محاولة بدأت خلال 30 دقيقة. البيانات عن نتائج المحاولة مثبتة بالمعرّف الصحيح.</p>
+<div class="surface"><div class="table-wrap"><table class="flow-metrics-table">
+<thead><tr><th>المسار</th><th>اختاروه • جلسات</th><th>بدؤوا اختبارًا</th><th>إرسال مرصود</th><th>أكملوا</th><th>شاهدوا النتيجة بعد الإكمال</th><th>تفاعلوا بعد المشاهدة</th></tr></thead>
+<tbody><tr><td><b>محادثة مباشرة</b></td><td class="numeric">262</td><td class="numeric">258</td><td class="numeric">68</td><td class="numeric">76</td><td class="numeric">51</td><td class="numeric">21</td></tr><tr><td><b>اختبار كامل</b></td><td class="numeric">44</td><td class="numeric">41</td><td class="numeric">2</td><td class="numeric">4</td><td class="numeric">2</td><td class="numeric">2</td></tr><tr><td><b>مهارات أولًا</b></td><td class="numeric">31</td><td class="numeric">30</td><td class="numeric">5</td><td class="numeric">6</td><td class="numeric">3</td><td class="numeric">1</td></tr><tr><td><b>الوقت أولًا</b></td><td class="numeric">25</td><td class="numeric">24</td><td class="numeric">5</td><td class="numeric">6</td><td class="numeric">3</td><td class="numeric">0</td></tr></tbody></table></div>
+<p class="copy-note">الإرسال المرصود هو حدث <code>test_submitted</code> وليس بوابة إلزامية في التسلسل، لأن بعض المحاولات لها حالة <code>Completed</code> في قاعدة الإنتاج دون الحدث نفسه. نتيجة الصفحة هنا تُحسب فقط بين المحاولات المكتملة، والتفاعل فقط إذا رُصد بعد عرض النتيجة. يمكن أن تظهر أرقام تفاعل إجمالية أوسع خارج هذا التسلسل الصارم.</p>
+</div></section>
+<section class="section"><h2>مصادر التخصيص وما الذي تحقّق</h2><div class="surface">
+<div class="group"><div class="group-title">المهارات أولًا — 31 جلسة</div><div class="group-details">تسع تركيبات مهارات مختلفة مثبتة من رابط صفحة ما قبل الاختبار، منها الكتابة فقط (8 جلسات) والقراءة فقط (6 جلسات).</div></div>
+<div class="group"><div class="group-title">الوقت أولًا — 25 جلسة</div><div class="group-details">عشرة اختيارات مدة مثبتة؛ من 10 إلى 165 دقيقة. لكل مدة تفرّعات إضافية من <code>skills_config</code> توضّح المهارات المختارة كاملة أو جزئية.</div></div>
+<div class="group"><div class="group-title">Production DB</div><div class="group-details">يوجد حقلان <code>selected_skills</code> و<code>selected_duration</code> في جدول <code>user_mobile_handoff_contexts</code>، لكنه يغطي انتقالات الموبايل فقط بصورة جزئية. اعتمدت لذلك على <code>PostHog</code> لخيارات المسار الكاملة، وعلى جدول <code>user_exam_attempts</code> لتأكيد حالة المحاولة.</div></div>
+</div></section>
+<div class="method"><strong>منهجية القياس:</strong> آخر 30 يومًا قبل 31 أكتوبر 2026 الساعة 13:45 بتوقيت UTC+3. أول اختيار مسار في جلسة سعودية خلال 30 دقيقة من ظهور التهيئة؛ آخر إعداد موثق في الصفحة قبل تسجيل الاختيار؛ أول اختبار بدأ في الجلسة خلال 30 دقيقة من الاختيار. نستخدم معرّف المحاولة من الرابط ونؤكد تطابق صاحبها في قاعدة البيانات. <b>الـ Mind Map لقطة موثقة وليست تحديثًا مباشرًا</b>؛ عدد الجلسات قد يفوق عدد المستخدمين لأن المستخدم قد يعود في أكثر من جلسة. عند الفروع قليلة العدد، استنتاجات الإكمال نسبًا غير موثوقة لاتخاذ قرار بدون عينة أكبر.</div>
+<div class="footer"><span>مصادر: PostHog Events + Warehouse mirror of production user_exam_attempts/users + production user_mobile_handoff_contexts</span><span>آخر تحقق: 31 أكتوبر 2026</span><a href="https://eu.posthog.com/project/111712/dashboard/1067119" target="_blank" rel="noopener">PostHog ↗</a></div>
+</main><script>(function(){'use strict';
+const svg=document.getElementById('mind-svg');const viewport=document.getElementById('mind-viewport');if(!svg||!viewport)return;
+const NS='http://www.w3.org/2000/svg';
+const WIDTH=282, HEIGHT=106, GAP_X=356, GAP_Y=135, MARGIN=76;
+const data={"id":"root","name":"ظهور التهيئة","value":"572","meta":"525 مستخدمًا فريدًا","kind":"root","children":[{"id":"selected","name":"اختيار مسار","value":"362","meta":"63.3% من الجلسات","kind":"positive","children":[{"id":"speaking","name":"محادثة مباشرة","value":"262","meta":"مسار سريع","children":[{"id":"speaking-start","name":"بدأ الاختبار","value":"258","meta":"محاولات مطابقة 255 • إرسال 68","children":[{"id":"speaking-done","name":"الاختبار مكتمل","value":"76","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"speaking-view","name":"عرض صفحة النتيجة","value":"51","meta":"من المكتملين فقط","children":[{"id":"speaking-eng","name":"تفاعل فعلي مع النتيجة","value":"21","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 68 | متروك: 103 | تفاعل منخفض: 50 | متوقف مؤقتًا: 26 | نتائج مرئية عمومًا: 67 | تفاعل مرصود عمومًا: 40"}],"info":"أُرسل Event: 68 | متروك: 103 | تفاعل منخفض: 50 | متوقف مؤقتًا: 26 | نتائج مرئية عمومًا: 67 | تفاعل مرصود عمومًا: 40"}],"info":"أُرسل Event: 68 | متروك: 103 | تفاعل منخفض: 50 | متوقف مؤقتًا: 26 | نتائج مرئية عمومًا: 67 | تفاعل مرصود عمومًا: 40"}],"info":"أُرسل Event: 68 | متروك: 103 | تفاعل منخفض: 50 | متوقف مؤقتًا: 26 | نتائج مرئية عمومًا: 67 | تفاعل مرصود عمومًا: 40"}],"info":"اختار 262 جلسة. بدأ 258، تم التحقق من 255 محاولة، اكتمل 76، شوهدت نتيجة مكتملة 51، وتفاعل فعلياً 21. إرسال مُسجّل: 68."},{"id":"full","name":"اختبار كامل","value":"44","meta":"Full Test","children":[{"id":"full-start","name":"بدأ الاختبار","value":"41","meta":"محاولات مطابقة 40 • إرسال 2","children":[{"id":"full-done","name":"الاختبار مكتمل","value":"4","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"full-view","name":"عرض صفحة النتيجة","value":"2","meta":"من المكتملين فقط","children":[{"id":"full-eng","name":"تفاعل فعلي مع النتيجة","value":"2","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 2 | متروك: 21 | تفاعل منخفض: 12 | متوقف مؤقتًا: 3 | نتائج مرئية عمومًا: 3 | تفاعل مرصود عمومًا: 2"}],"info":"أُرسل Event: 2 | متروك: 21 | تفاعل منخفض: 12 | متوقف مؤقتًا: 3 | نتائج مرئية عمومًا: 3 | تفاعل مرصود عمومًا: 2"}],"info":"أُرسل Event: 2 | متروك: 21 | تفاعل منخفض: 12 | متوقف مؤقتًا: 3 | نتائج مرئية عمومًا: 3 | تفاعل مرصود عمومًا: 2"}],"info":"أُرسل Event: 2 | متروك: 21 | تفاعل منخفض: 12 | متوقف مؤقتًا: 3 | نتائج مرئية عمومًا: 3 | تفاعل مرصود عمومًا: 2"}],"info":"اختار 44 جلسة. بدأ 41، تم التحقق من 40 محاولة، اكتمل 4، شوهدت نتيجة مكتملة 2، وتفاعل فعلياً 2. إرسال مُسجّل: 2."},{"id":"custom","name":"تخصيص الاختبار","value":"56","meta":"مهارات أو وقت أولًا","kind":"positive","children":[{"id":"skills-first","name":"المهارات أولًا","value":"31","meta":"9 تركيبات مهارات","children":[{"id":"s0","name":"كتابة","value":"8","meta":"تركيبة مهارات مختارة","children":[{"id":"s0-start","name":"بدأ الاختبار","value":"8","meta":"محاولات مطابقة 8 • إرسال 1","children":[{"id":"s0-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"s0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 1 | تفاعل منخفض: 5 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 1 | تفاعل منخفض: 5 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 1 | تفاعل منخفض: 5 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 1 | تفاعل منخفض: 5 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"اختار 8 جلسة. بدأ 8، تم التحقق من 8 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 1."},{"id":"s1","name":"قراءة","value":"6","meta":"تركيبة مهارات مختارة","children":[{"id":"s1-start","name":"بدأ الاختبار","value":"6","meta":"محاولات مطابقة 6 • إرسال 0","children":[{"id":"s1-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s1-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"s1-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 5 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 5 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 5 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 5 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 6 جلسة. بدأ 6، تم التحقق من 6 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"s2","name":"جميع المهارات الأربع","value":"4","meta":"تركيبة مهارات مختارة","children":[{"id":"s2-start","name":"بدأ الاختبار","value":"4","meta":"محاولات مطابقة 4 • إرسال 0","children":[{"id":"s2-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s2-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"s2-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 2 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 2 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 2 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 2 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 4 جلسة. بدأ 4، تم التحقق من 4 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"s3","name":"استماع","value":"4","meta":"تركيبة مهارات مختارة","children":[{"id":"s3-start","name":"بدأ الاختبار","value":"4","meta":"محاولات مطابقة 4 • إرسال 1","children":[{"id":"s3-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s3-view","name":"عرض صفحة النتيجة","value":"1","meta":"من المكتملين فقط","children":[{"id":"s3-eng","name":"تفاعل فعلي مع النتيجة","value":"1","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"اختار 4 جلسة. بدأ 4، تم التحقق من 4 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 1، وتفاعل فعلياً 1. إرسال مُسجّل: 1."},{"id":"s4","name":"استماع + قراءة + كتابة","value":"3","meta":"تركيبة مهارات مختارة","children":[{"id":"s4-start","name":"بدأ الاختبار","value":"3","meta":"محاولات مطابقة 3 • إرسال 0","children":[{"id":"s4-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s4-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"s4-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 2 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 3 جلسة. بدأ 3، تم التحقق من 3 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"s5","name":"محادثة","value":"3","meta":"تركيبة مهارات مختارة","children":[{"id":"s5-start","name":"بدأ الاختبار","value":"2","meta":"محاولات مطابقة 2 • إرسال 2","children":[{"id":"s5-done","name":"الاختبار مكتمل","value":"2","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s5-view","name":"عرض صفحة النتيجة","value":"1","meta":"من المكتملين فقط","children":[{"id":"s5-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 2 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 2 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 2 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 2 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"اختار 3 جلسة. بدأ 2، تم التحقق من 2 محاولة، اكتمل 2، شوهدت نتيجة مكتملة 1، وتفاعل فعلياً 0. إرسال مُسجّل: 2."},{"id":"s6","name":"استماع + محادثة","value":"1","meta":"تركيبة مهارات مختارة","children":[{"id":"s6-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"s6-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s6-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"s6-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"s7","name":"استماع + كتابة","value":"1","meta":"تركيبة مهارات مختارة","children":[{"id":"s7-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"s7-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s7-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"s7-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"s8","name":"استماع + قراءة","value":"1","meta":"تركيبة مهارات مختارة","children":[{"id":"s8-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 1","children":[{"id":"s8-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"s8-view","name":"عرض صفحة النتيجة","value":"1","meta":"من المكتملين فقط","children":[{"id":"s8-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 1"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 1، وتفاعل فعلياً 0. إرسال مُسجّل: 1."}]},{"id":"time-first","name":"الوقت أولًا","value":"25","meta":"10 خيارات مدة","children":[{"id":"t10","name":"10 دقيقة","value":"7","meta":"جلسات • بدأ 7","children":[{"id":"t10-0","name":"استماع جزئي","value":"6","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t10-0-start","name":"بدأ الاختبار","value":"6","meta":"محاولات مطابقة 6 • إرسال 1","children":[{"id":"t10-0-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t10-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t10-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 3 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 3 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 3 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 3 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"اختار 6 جلسة. بدأ 6، تم التحقق من 6 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 1."},{"id":"t10-1","name":"محادثة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t10-1-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"t10-1-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t10-1-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t10-1-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 1 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t15","name":"15 دقيقة","value":"2","meta":"جلسات • بدأ 2","children":[{"id":"t15-0","name":"استماع جزئي","value":"2","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t15-0-start","name":"بدأ الاختبار","value":"2","meta":"محاولات مطابقة 2 • إرسال 0","children":[{"id":"t15-0-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t15-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t15-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 2 جلسة. بدأ 2، تم التحقق من 2 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t20","name":"20 دقيقة","value":"1","meta":"جلسات • بدأ 0","children":[{"id":"t20-0","name":"استماع جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t20-0-start","name":"بدأ الاختبار","value":"0","meta":"محاولات مطابقة 0 • إرسال 0","children":[{"id":"t20-0-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t20-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t20-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 0، تم التحقق من 0 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t25","name":"25 دقيقة","value":"1","meta":"جلسات • بدأ 1","children":[{"id":"t25-0","name":"استماع جزئي + محادثة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t25-0-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"t25-0-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t25-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t25-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t30","name":"30 دقيقة","value":"5","meta":"جلسات • بدأ 5","children":[{"id":"t30-0","name":"قراءة جزئي + محادثة جزئي","value":"2","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t30-0-start","name":"بدأ الاختبار","value":"2","meta":"محاولات مطابقة 2 • إرسال 0","children":[{"id":"t30-0-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t30-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t30-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 2 جلسة. بدأ 2، تم التحقق من 2 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"t30-1","name":"استماع جزئي + قراءة جزئي","value":"2","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t30-1-start","name":"بدأ الاختبار","value":"2","meta":"محاولات مطابقة 2 • إرسال 0","children":[{"id":"t30-1-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t30-1-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t30-1-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 2 جلسة. بدأ 2، تم التحقق من 2 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"t30-2","name":"كتابة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t30-2-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 1","children":[{"id":"t30-2-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t30-2-view","name":"عرض صفحة النتيجة","value":"1","meta":"من المكتملين فقط","children":[{"id":"t30-2-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 1، وتفاعل فعلياً 0. إرسال مُسجّل: 1."}]},{"id":"t40","name":"40 دقيقة","value":"1","meta":"جلسات • بدأ 1","children":[{"id":"t40-0","name":"قراءة جزئي + كتابة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t40-0-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"t40-0-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t40-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t40-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t60","name":"60 دقيقة","value":"3","meta":"جلسات • بدأ 3","children":[{"id":"t60-0","name":"جميع المهارات • جزئي","value":"2","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t60-0-start","name":"بدأ الاختبار","value":"2","meta":"محاولات مطابقة 2 • إرسال 0","children":[{"id":"t60-0-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t60-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t60-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 2 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 2 جلسة. بدأ 2، تم التحقق من 2 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."},{"id":"t60-1","name":"استماع جزئي + قراءة جزئي + كتابة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t60-1-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"t60-1-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t60-1-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t60-1-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 1 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t90","name":"90 دقيقة","value":"2","meta":"جلسات • بدأ 2","children":[{"id":"t90-0","name":"جميع المهارات • جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t90-0-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 1","children":[{"id":"t90-0-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t90-0-view","name":"عرض صفحة النتيجة","value":"1","meta":"من المكتملين فقط","children":[{"id":"t90-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 1، وتفاعل فعلياً 0. إرسال مُسجّل: 1."},{"id":"t90-1","name":"استماع جزئي + قراءة جزئي + محادثة كامل","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t90-1-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"t90-1-done","name":"الاختبار مكتمل","value":"0","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t90-1-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t90-1-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 1 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 0، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t120","name":"120 دقيقة","value":"2","meta":"جلسات • بدأ 2","children":[{"id":"t120-0","name":"جميع المهارات • جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t120-0-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 1","children":[{"id":"t120-0-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t120-0-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t120-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 1"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 1."},{"id":"t120-1","name":"استماع جزئي + قراءة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t120-1-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 0","children":[{"id":"t120-1-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t120-1-view","name":"عرض صفحة النتيجة","value":"0","meta":"من المكتملين فقط","children":[{"id":"t120-1-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 0 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 0 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 0، وتفاعل فعلياً 0. إرسال مُسجّل: 0."}]},{"id":"t165","name":"165 دقيقة","value":"1","meta":"جلسات • بدأ 1","children":[{"id":"t165-0","name":"محادثة جزئي","value":"1","meta":"توزيع المهارات: جزئي / كامل","children":[{"id":"t165-0-start","name":"بدأ الاختبار","value":"1","meta":"محاولات مطابقة 1 • إرسال 1","children":[{"id":"t165-0-done","name":"الاختبار مكتمل","value":"1","meta":"حالة Completed مؤكدة","kind":"positive","children":[{"id":"t165-0-view","name":"عرض صفحة النتيجة","value":"1","meta":"من المكتملين فقط","children":[{"id":"t165-0-eng","name":"تفاعل فعلي مع النتيجة","value":"0","meta":"بعد عرض نتيجة محاولة مكتملة","kind":"positive","info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"أُرسل Event: 1 | متروك: 0 | تفاعل منخفض: 0 | متوقف مؤقتًا: 0 | نتائج مرئية عمومًا: 1 | تفاعل مرصود عمومًا: 0"}],"info":"اختار 1 جلسة. بدأ 1، تم التحقق من 1 محاولة، اكتمل 1، شوهدت نتيجة مكتملة 1، وتفاعل فعلياً 0. إرسال مُسجّل: 1."}]}]}]}]},{"id":"missing","name":"لا اختيار مسجل","value":"210","meta":"لا يعني انسحابًا مؤكّدًا","kind":"negative","children":[{"id":"pretest-gap","name":"وصلوا لصفحة ما قبل الاختبار","value":"106","meta":"مؤشر قد يتداخل مع غيره"},{"id":"test-gap","name":"بدأوا اختبارًا","value":"20","meta":"رغم عدم رصد الاختيار"},{"id":"close-gap","name":"أغلقوا نافذة التهيئة","value":"103","meta":"مؤشر قد يتداخل مع غيره"}]}]};
   const byId=new Map();
   function index(node){byId.set(node.id,node);(node.children||[]).forEach(index)}
   index(data);
+  function showDetails(id){const n=byId.get(id);if(!n)return;
+    const target=document.getElementById('node-details');
+    const safe=s=>String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    target.innerHTML='<b>'+safe(n.name)+'</b> — '+safe(n.value)+'<div>'+safe(n.info||n.meta)+'</div>';
+  }
   const defaults=['root','selected','custom'];
   const expanded=new Set(defaults);
   let zoom=.9, lastFocus='root';
@@ -380,15 +226,16 @@ h1{margin:12px 0 10px;font-size:clamp(24px,3vw,38px);line-height:1.35}
       if(hasChildren)g.setAttribute('aria-expanded',expanded.has(n.id)?'true':'false');
       g.setAttribute('aria-label',`${n.name}: ${n.value}${hasChildren?'، اضغط لفتح أو إغلاق الفروع':''}`);
       el('rect',{x:p.x,y:p.cy-HEIGHT/2,width:WIDTH,height:HEIGHT,rx:14,'class':'mind-rect'},g);
-      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+24,n.name,'mind-title');
-      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+56,n.value,'mind-value');
-      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+76,n.meta||'','mind-meta');
+      const titleEl=text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+25,n.name.length>26?n.name.slice(0,25)+'…':n.name,'mind-title');
+      titleEl.setAttribute('aria-label',n.name);
+      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+64,n.value,'mind-value');
+      text(g,p.x+WIDTH-15,p.cy-HEIGHT/2+87,(n.meta||'').slice(0,38),'mind-meta');
       if(hasChildren){
         const cx=p.x-17;
         el('circle',{cx,cy:p.cy,r:14,'class':'mind-toggle-disc'},g);
         text(g,cx,p.cy+6,expanded.has(n.id)?'−':'+','mind-toggle-text','middle');
       }
-      el('title',{},g).textContent=n.name+' — '+n.value;
+      el('title',{},g).textContent=n.name+' — '+n.value+' — '+(n.info||n.meta||'');
     }
     document.getElementById('mind-zoom-label').textContent=Math.round(zoom*100)+'%';
     if(options.focus){
@@ -406,8 +253,8 @@ h1{margin:12px 0 10px;font-size:clamp(24px,3vw,38px);line-height:1.35}
     if(expanded.has(id))expanded.delete(id);else expanded.add(id);
     lastFocus=id;draw({focus:id});
   }
-  svg.addEventListener('click',e=>{const g=e.target.closest('.mind-node');if(g)toggle(g.dataset.id)});
-  svg.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const g=e.target.closest('.mind-node');if(!g)return;e.preventDefault();toggle(g.dataset.id)});
+  svg.addEventListener('click',e=>{const g=e.target.closest('.mind-node');if(g){showDetails(g.dataset.id);toggle(g.dataset.id)}});
+  svg.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const g=e.target.closest('.mind-node');if(!g)return;e.preventDefault();showDetails(g.dataset.id);toggle(g.dataset.id)});
   document.getElementById('mind-expand').addEventListener('click',()=>{for(const [id,n] of byId)if(n.children?.length)expanded.add(id);draw({focus:'root'})});
   document.getElementById('mind-collapse').addEventListener('click',()=>{expanded.clear();expanded.add('root');draw({focus:'root'})});
   document.getElementById('mind-reset').addEventListener('click',()=>{expanded.clear();defaults.forEach(x=>expanded.add(x));zoom=.9;draw();viewport.scrollTop=0;viewport.scrollLeft=0});
@@ -423,8 +270,7 @@ h1{margin:12px 0 10px;font-size:clamp(24px,3vw,38px);line-height:1.35}
     viewport.scrollTop=drag.top+drag.y-e.clientY;
   });
   for(const name of ['pointerup','pointercancel','pointerleave'])viewport.addEventListener(name,()=>{drag=null;viewport.classList.remove('grabbing')});
-  draw();
+  draw();showDetails('root');
   viewport.scrollTop=0;viewport.scrollLeft=0;
-})();
-</script></body>
-</html>
+
+})();</script></body></html>
