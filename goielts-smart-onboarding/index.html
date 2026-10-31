@@ -129,7 +129,7 @@ h1{margin:12px 0 10px;font-size:clamp(24px,3vw,38px);line-height:1.35}
 .mind-title{font-size:15px}.mind-meta{font-size:10.6px}.mind-value{font-size:27px}
 .mind-edge.flow{stroke:#6d99d3;stroke-width:3}.mind-node[data-kind="positive"] .mind-rect{fill:#e6f8f3}
 @media (max-width:650px){.mind-selected-card{margin:10px}.mind-viewport{height:550px}}
-</style></head><body><main class="container">
+</style><link rel="icon" href="data:,"></head><body><main class="container">
 <section class="hero"><div class="eyebrow">GOIELTS.AI / PRODUCT ANALYTICS / SAUDI ARABIA</div>
 <h1>خريطة Smart Onboarding: المسارات والاختيارات والنتائج</h1>
 <p>شجرة أفقية قابلة للفتح والإغلاق توضح الرحلة بالترتيب: اختيار المسار، ثم اختيار المهارات أو المدة، ثم بدء الاختبار، وإكماله، وعرض صفحة نتيجته، والتفاعل معها.</p>
@@ -256,8 +256,8 @@ const data={"id":"root","name":"ظهور التهيئة","value":"572","meta":"5
   svg.addEventListener('click',e=>{const g=e.target.closest('.mind-node');if(g){showDetails(g.dataset.id);toggle(g.dataset.id)}});
   svg.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const g=e.target.closest('.mind-node');if(!g)return;e.preventDefault();showDetails(g.dataset.id);toggle(g.dataset.id)});
   document.getElementById('mind-expand').addEventListener('click',()=>{for(const [id,n] of byId)if(n.children?.length)expanded.add(id);draw({focus:'root'})});
-  document.getElementById('mind-collapse').addEventListener('click',()=>{expanded.clear();expanded.add('root');draw({focus:'root'})});
-  document.getElementById('mind-reset').addEventListener('click',()=>{expanded.clear();defaults.forEach(x=>expanded.add(x));zoom=.9;draw();viewport.scrollTop=0;viewport.scrollLeft=0});
+  document.getElementById('mind-collapse').addEventListener('click',()=>{expanded.clear();expanded.add('root');draw({focus:'root'});showDetails('root')});
+  document.getElementById('mind-reset').addEventListener('click',()=>{expanded.clear();defaults.forEach(x=>expanded.add(x));zoom=.9;draw();showDetails('root');viewport.scrollTop=0;viewport.scrollLeft=0});
   document.getElementById('mind-zoom-in').addEventListener('click',()=>{zoom=Math.min(1.6,Math.round((zoom+.1)*10)/10);draw({focus:lastFocus})});
   document.getElementById('mind-zoom-out').addEventListener('click',()=>{zoom=Math.max(.5,Math.round((zoom-.1)*10)/10);draw({focus:lastFocus})});
   let drag=null;
